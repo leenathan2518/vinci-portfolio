@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Junchen Lee Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      color: #111111;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      padding: 80px 0;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      color: #666666;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      max-width: 760px;
+      color: #444444;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 70px 0;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 25px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-note {
+      max-width: 780px;
+      color: #555555;
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #f7f7f7;
+      border: 1px solid #dddddd;
+      border-radius: 16px;
+      padding: 24px;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 310px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #555555;
+      background: #ffffff;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+      line-height: 1.3;
+    }
+
+    .card p {
+      color: #444444;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 18px;
+    }
+
+    .tag {
+      background: #ffffff;
+      border: 1px solid #dddddd;
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: #333333;
+      font-size: 12px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .button-row a,
+    .links a {
+      display: inline-block;
+      color: #111111;
+      text-decoration: none;
+      border: 1px solid #111111;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 14px;
+      transition: 0.2s;
+      background: #ffffff;
+    }
+
+    .button-row a:hover,
+    .links a:hover {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: #f5f5f5;
+      border: 1px solid #dddddd;
+      padding: 10px 18px;
+      border-radius: 999px;
+      color: #333333;
+      font-size: 14px;
+    }
+
+    .research-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .research-item {
+      background: #f7f7f7;
+      border: 1px solid #dddddd;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .research-item h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .research-item p {
+      color: #444444;
+      font-size: 15px;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-item {
+      background: #f7f7f7;
+      border: 1px solid #dddddd;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .experience-item h3 {
+      margin-bottom: 6px;
+      font-size: 21px;
+    }
+
+    .experience-meta {
+      color: #666666;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .experience-item p {
+      color: #444444;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .experience-item ul {
+      margin-left: 20px;
+      color: #444444;
+      font-size: 15px;
+    }
+
+    .experience-item li {
+      margin-bottom: 8px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: #666666;
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      header {
+        padding: 58px 0;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Junchen Lee</h1>
+
+      <div class="subtitle">
+        Applied Economics · Data Analytics · Data Engineering · Financial Research
+      </div>
+
+      <p class="intro">
+        Applied Economics postgraduate student with a background in statistics,
+        econometrics, Python, SQL, financial analysis, and automation. My portfolio
+        focuses on practical data products that combine economic reasoning,
+        database workflows, interactive dashboards, and market-oriented analysis.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2>Work Experience</h2>
+
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>Financial and Legal Debt Advisory Officer</h3>
+          <div class="experience-meta">Notary Office, China · October 2022 – December 2024</div>
+          <p>
+            Worked in a public notary-office environment supporting debt-related legal and financial documentation,
+            client communication, case preparation, and process coordination.
+          </p>
+          <ul>
+            <li>Handled case materials related to financial debt, legal documentation, and notarization workflows.</li>
+            <li>Communicated with clients and internal staff to clarify information, organize records, and support case progress.</li>
+            <li>Developed practical understanding of legal-service operations, document control, compliance-oriented processes, and structured administrative data.</li>
+            <li>Later used this domain experience to design a privacy-preserving legal case analytics dashboard.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Featured Projects</h2>
+
+      <p class="section-note">
+        A collection of data analytics, data engineering, and applied economics projects.
+        These projects demonstrate end-to-end workflows from data extraction and cleaning
+        to database loading, modelling, visualization, and research communication.
+      </p>
+
+      <div class="projects">
+
+        <div class="card">
+          <div>
+            <h3>Legal Case Analytics Dashboard</h3>
+            <p>
+              Interactive dashboard for legal case management analytics using anonymized
+              case records. It includes SQL-based data preparation, KPI tracking,
+              monthly trends, category analysis, staff-level metrics, and interactive filters.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Plotly</span>
+            </div>
+          </div>
+          <div class="button-row">
+            <a href="https://legal-case-analytics-dashboard-gkqbborzomstuaxxbikwxy.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a href="https://github.com/leenathan2518/legal-case-analytics-dashboard" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>US Macroeconomic Indicators Dashboard</h3>
+            <p>
+              Streamlit dashboard for exploring US macroeconomic indicators, including
+              GDP, inflation, unemployment, interest rates, recession shading, and time-series
+              movements based on public economic data sources.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">FRED API</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Plotly</span>
+            </div>
+          </div>
+          <div class="button-row">
+            <a href="https://us-macro-analytics-dashboard-pecmk5e3yeeltqbzx98zcs.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a href="https://github.com/leenathan2518/us-macro-analytics-dashboard" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>Automated Data Pipeline</h3>
+            <p>
+              End-to-end data engineering project that extracts financial and macroeconomic
+              data, performs validation and transformation, loads structured tables into
+              PostgreSQL, and provides a monitoring dashboard for pipeline results.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">ETL</span>
+              <span class="tag">OpenBB</span>
+              <span class="tag">Streamlit</span>
+            </div>
+          </div>
+          <div class="button-row">
+            <a href="https://github.com/leenathan2518/automated-data-pipeline" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>Equity Research Platform</h3>
+            <p>
+              Multi-company equity research dashboard for the new energy vehicle sector.
+              It combines technical indicators, financial metrics, business operation data,
+              cost pressure indicators, news signals, scoring logic, and company-level reports.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">Financial Data</span>
+              <span class="tag">Equity Research</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">Scoring Model</span>
+            </div>
+          </div>
+          <div class="button-row">
+            <a href="https://github.com/leenathan2518/equity-research-platform" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>US Macro Shock Transmission Dashboard</h3>
+            <p>
+              Event-study dashboard that evaluates how US macroeconomic surprises such as
+              CPI, PPI, NFP, retail sales, unemployment, and FOMC events transmit across
+              global equity, FX, bond, commodity, and index markets.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Event Study</span>
+              <span class="tag">Market Data</span>
+              <span class="tag">Econometrics</span>
+              <span class="tag">Python</span>
+              <span class="tag">Streamlit</span>
+            </div>
+          </div>
+          <div class="button-row">
+            <a href="https://github.com/leenathan2518/us-macro-shock-transmission-dashboard" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>Yahoo Finance Telegram Bot</h3>
+            <p>
+              Lightweight automation project that collects finance-related news and sends
+              Telegram push notifications through Cloudflare Workers. It demonstrates
+              serverless scheduling, API integration, and practical automation design.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Cloudflare Workers</span>
+              <span class="tag">Telegram Bot</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Automation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Research & Writing</h2>
+
+      <div class="research-list">
+        <div class="research-item">
+          <h3>Australia Vaping Policy Analysis</h3>
+          <p>
+            Policy research on Australia’s pharmacy-based vaping reforms, regulatory
+            asymmetry, substitution risks, illicit market responses, and enforcement burden.
+          </p>
+        </div>
+
+        <div class="research-item">
+          <h3>Electric Vehicle Subsidy Evaluation</h3>
+          <p>
+            Applied economics writing on the efficiency, equity, environmental rationale,
+            and potential deadweight-loss concerns of EV subsidy policy.
+          </p>
+        </div>
+
+        <div class="research-item">
+          <h3>Econometrics & Policy Evaluation</h3>
+          <p>
+            Coursework and independent work involving OLS, panel data, instrumental variables,
+            binary choice models, time-series analysis, and event-study style evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Skills</h2>
+
+      <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">PostgreSQL</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">ETL</div>
+        <div class="skill">Streamlit</div>
+        <div class="skill">Pandas</div>
+        <div class="skill">Plotly</div>
+        <div class="skill">Econometrics</div>
+        <div class="skill">Statistics</div>
+        <div class="skill">Financial Analysis</div>
+        <div class="skill">Market Research</div>
+        <div class="skill">Cloudflare</div>
+        <div class="skill">Automation</div>
+        <div class="skill">Policy Analysis</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Contact</h2>
+
+      <div class="links">
+        <a href="https://github.com/leenathan2518" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:vincilee01@gmail.com">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Vinci Lee
+  </footer>
+
+</body>
+</html>
